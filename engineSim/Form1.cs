@@ -13,50 +13,48 @@ namespace engineSim
         Pen pen1 = new Pen(Color.Silver, 1);
         float rad = (float)(180 / Math.PI);
         int cux = 350;
-        int cuy = 350;
+        int cuy = 650;
+        int cux2 = 350;
+        int cuy2 = 340;
 
         void drawCircle()
         {
 
-            float px, py, cx, cy;
-            cx = (float)Math.Cos(0 / rad) * (200 + 0) + cux;
-            cy = (float)Math.Sin(0 / rad) * (200 + 0) + cuy;
+            float px, py, cx, cy,cx2, cy2;
+            cx = (float)Math.Cos(0 / rad) * (100 ) + cux;
+            cy = (float)Math.Sin(0 / rad) * (100 ) + cuy;
+            cx2 = (float)Math.Cos(0 / rad) * (1 ) + cux2;
+            cy2 = (float)Math.Sin(0 / rad) * (90) + cuy2;
             px = cx;
             py = cy;
-            int p = 0;
-          
 
 
-            for(int i = 0; i< 360; i++) {
-                
-                g.Clear(this.BackColor);
-               
-                px = cx;
-                        py = cy;
-                        cx = (float)Math.Cos(i / rad) * (200 ) + cux;
-                        cy = (float)Math.Sin(i / rad) * (200 ) + cuy;
-                      
-                        g.DrawRectangle(pen2, cx, cy, 1, 1);
-                        
-                        g.DrawLine(pen2, cux, cuy, cx, cy);
-                        g.DrawLine(pen2, cx, cy, 700, 800);
-                        g.DrawLine(pen2, cux, cuy, 700, 800);
-                        g.DrawLine(pen2, cux, cuy, (700-cx)/2, (800-cy)/2);
-                g.DrawLine(pen2, cx,cy, (700 - cx) / 2, (800 - cy) / 2);
-                g.DrawLine(pen2, 700,800, (700 - cx) / 2, (800 - cy) / 2);
-                Thread.Sleep(2);
-                    }
-               
 
-           
+            for (int j = 0; j < 2 ; j += 1) {
+                for (int i = 0; i < 360; i += 1) {
+
+                    g.Clear(this.BackColor);
+
+                    px = cx;
+                    py = cy;
+                    cx = (float)Math.Cos(i / rad) * (100) + cux;
+                    cy = (float)Math.Sin(i / rad) * (100) + cuy;
+                    cx2 = (float)Math.Cos(i / rad) * (1) + cux2;
+                    cy2 = (float)Math.Sin(i / rad) * (90) + cuy2;
 
 
+                    g.DrawRectangle(pen2, cx, cy, 1, 1);
+                    g.DrawLine(pen2, cux, cuy, cx, cy);
+                    //g.DrawLine(pen2, cux2, cuy2, cx2, cy2);
+                    g.DrawLine(pen2, cx, cy, cx2, cy2);
+                    // g.DrawLine(pen2, cux2, cuy2, cux, cuy);
+
+
+                    Thread.Sleep(1);
+
+                }
+            }
         }
-
-
-
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
