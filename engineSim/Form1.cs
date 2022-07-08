@@ -7,59 +7,53 @@ namespace engineSim
             InitializeComponent();
         }
 
-        Graphics g;
-        Pen pen0 = new Pen(Color.Black, 1);
-        Pen pen2 = new Pen(Color.Red, 1);
-        Pen pen1 = new Pen(Color.Silver, 1);
-        float rad = (float)(180 / Math.PI);
-        int cux = 350;
-        int cuy = 650;
-        int cux2 = 350;
-        int cuy2 = 340;
+        public Graphics g;
+        public Pen pen0 = new Pen(Color.Black, 1);
+        public Pen pen2 = new Pen(Color.Red, 1);
+        public Pen pen1 = new Pen(Color.Silver, 1);
 
-        void drawCircle()
+        
+
+        public List<engine> engines = new List<engine>();
+        
+        private void button1_Click(object sender, EventArgs e)
         {
+            engines.Add(new engine(this.g, this ));
+            engines.Add(new engine(this.g, this));
+            engines.Add(new engine(this.g, this));
+            engines.Add(new engine(this.g, this));
 
-            float px, py, cx, cy,cx2, cy2;
-            cx = (float)Math.Cos(0 / rad) * (100 ) + cux;
-            cy = (float)Math.Sin(0 / rad) * (100 ) + cuy;
-            cx2 = (float)Math.Cos(0 / rad) * (1 ) + cux2;
-            cy2 = (float)Math.Sin(0 / rad) * (90) + cuy2;
-            px = cx;
-            py = cy;
+            engines[0].cux = 350;
+            engines[0].cuy = 650;
+            engines[0].cux2 = 350;
+            engines[0].cuy2 = 340;
+            engines[0].drawCircle();
+
+            engines[1].cux = 450;
+            engines[1].cuy = 650;
+            engines[1].cux2 = 450;
+            engines[1].cuy2 = 340;
+            engines[1].drawCircle();
+
+            engines[2].cux = 550;
+            engines[2].cuy = 650;
+            engines[2].cux2 = 550;
+            engines[2].cuy2 = 340;
+            engines[2].drawCircle();
+
+            engines[3].cux = 650;
+            engines[3].cuy = 650;
+            engines[3].cux2 = 650;
+            engines[3].cuy2 = 340;
+            engines[3].drawCircle();
 
 
-
-            for (int j = 0; j < 2 ; j += 1) {
-                for (int i = 0; i < 360; i += 1) {
-
-                    g.Clear(this.BackColor);
-
-                    px = cx;
-                    py = cy;
-                    cx = (float)Math.Cos(i / rad) * (100) + cux;
-                    cy = (float)Math.Sin(i / rad) * (100) + cuy;
-                    cx2 = (float)Math.Cos(i / rad) * (1) + cux2;
-                    cy2 = (float)Math.Sin(i / rad) * (90) + cuy2;
-
-
-                    g.DrawRectangle(pen2, cx, cy, 1, 1);
-                    g.DrawLine(pen2, cux, cuy, cx, cy);
-                    //g.DrawLine(pen2, cux2, cuy2, cx2, cy2);
-                    g.DrawLine(pen2, cx, cy, cx2, cy2);
-                    // g.DrawLine(pen2, cux2, cuy2, cux, cuy);
-
-
-                    Thread.Sleep(1);
-
-                }
-            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Width = 10000;
-            this.Height = 10000;
+            this.Width = 1600;
+            this.Height = 900;
             this.Left = 0;
             this.Top = 0;
 
@@ -67,9 +61,5 @@ namespace engineSim
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            drawCircle();
-        }
     }
 }
