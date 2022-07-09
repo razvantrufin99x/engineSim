@@ -12,40 +12,26 @@ namespace engineSim
         public Pen pen2 = new Pen(Color.Red, 1);
         public Pen pen1 = new Pen(Color.Silver, 1);
 
-        
 
-        public List<engine> engines = new List<engine>();
+        public theengine theengineMotor;
+        
         
         private void button1_Click(object sender, EventArgs e)
         {
-            engines.Add(new engine(this.g, this ));
-            engines.Add(new engine(this.g, this));
-            engines.Add(new engine(this.g, this));
-            engines.Add(new engine(this.g, this));
+            theengineMotor= new theengine(g, this);
+            theengineMotor.e = new engine(350,650,350,240);
+            theengineMotor.drawCircle();
 
-            engines[0].cux = 350;
-            engines[0].cuy = 650;
-            engines[0].cux2 = 350;
-            engines[0].cuy2 = 340;
-            engines[0].drawCircle();
+            theengineMotor.e = new engine(550, 650, 550, 240);
+            theengineMotor.drawCircle();
 
-            engines[1].cux = 450;
-            engines[1].cuy = 650;
-            engines[1].cux2 = 450;
-            engines[1].cuy2 = 340;
-            engines[1].drawCircle();
+            theengineMotor.e = new engine(750, 650, 750, 240);
+            theengineMotor.drawCircle();
 
-            engines[2].cux = 550;
-            engines[2].cuy = 650;
-            engines[2].cux2 = 550;
-            engines[2].cuy2 = 340;
-            engines[2].drawCircle();
+            theengineMotor.e = new engine(950, 650, 950, 240);
+            theengineMotor.drawCircle();
 
-            engines[3].cux = 650;
-            engines[3].cuy = 650;
-            engines[3].cux2 = 650;
-            engines[3].cuy2 = 340;
-            engines[3].drawCircle();
+
 
 
         }
