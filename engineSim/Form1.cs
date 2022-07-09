@@ -19,17 +19,17 @@ namespace engineSim
         private void button1_Click(object sender, EventArgs e)
         {
             theengineMotor= new theengine(g, this);
-            theengineMotor.e = new engine(350,650,350,240);
-            theengineMotor.drawCircle();
+            theengineMotor.e1 = new engine(350,650,350,240);
+            theengineMotor.drawCircle(ref theengineMotor.e1);
 
-            theengineMotor.e = new engine(550, 650, 550, 240);
-            theengineMotor.drawCircle();
+            theengineMotor.e2 = new engine(550, 650, 550, 240);
+            theengineMotor.drawCircle(ref theengineMotor.e2);
 
-            theengineMotor.e = new engine(750, 650, 750, 240);
-            theengineMotor.drawCircle();
+            theengineMotor.e3 = new engine(750, 650, 750, 240);
+            theengineMotor.drawCircle(ref theengineMotor.e3);
 
-            theengineMotor.e = new engine(950, 650, 950, 240);
-            theengineMotor.drawCircle();
+            theengineMotor.e4 = new engine(950, 650, 950, 240);
+            theengineMotor.drawCircle(ref theengineMotor.e4);
 
 
 

@@ -11,7 +11,10 @@ namespace engineSim
         public float rad = (float)(180 / Math.PI);
         public Graphics g;
         public Form1 f;
-        public engine e = new engine();
+        public engine e1 = new engine();
+        public engine e2 = new engine();
+        public engine e3 = new engine();
+        public engine e4 = new engine();
 
         public theengine() { }
    
@@ -24,12 +27,9 @@ namespace engineSim
         
         }
         
-        public void addengine(ref engine pe)
-        {
-            e = new engine(ref pe);
-        }
+       
 
-        public void drawCircle()
+        public void drawCircle(ref engine e)
         {
 
             float px, py, cx, cy, cx2, cy2;
