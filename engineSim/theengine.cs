@@ -29,39 +29,129 @@ namespace engineSim
         
        
 
-        public void drawCircle(ref engine e)
+        public void drawCircle()
         {
 
-            float px, py, cx, cy, cx2, cy2;
-            cx = (float)Math.Cos(0 / rad) * (100) + e.cux;
-            cy = (float)Math.Sin(0 / rad) * (100) + e.cuy;
-            cx2 = (float)Math.Cos(0 / rad) * (1) + e.cux2;
-            cy2 = (float)Math.Sin(0 / rad) * (90) + e.cuy2;
-            px = cx;
-            py = cy;
+            float pxA, pyA, cxA, cyA, cx2A, cy2A;
+            float pxB, pyB, cxB, cyB, cx2B, cy2B;
+            float pxC, pyC, cxC, cyC, cx2C, cy2C;
+            float pxD, pyD, cxD, cyD, cx2D, cy2D;
+
+            cxA = (float)Math.Cos(0 / rad) * (100) + e1.cux;
+            cyA = (float)Math.Sin(0 / rad) * (100) + e1.cuy;
+            cx2A = (float)Math.Cos(0 / rad) * (1) + e1.cux2;
+            cy2A = (float)Math.Sin(0 / rad) * (90) + e1.cuy2;
+            pxA = cxA;
+            pyA = cyA;
 
 
+            cxB = (float)Math.Cos(0 / rad) * (100) + e2.cux;
+            cyB = (float)Math.Sin(0 / rad) * (100) + e2.cuy;
+            cx2B = (float)Math.Cos(0 / rad) * (1) + e2.cux2;
+            cy2B = (float)Math.Sin(0 / rad) * (90) + e2.cuy2;
+            pxB = cxB;
+            pyB = cyB;
 
-            for (int j = 0; j < 1; j += 1)
+            cxC = (float)Math.Cos(0 / rad) * (100) + e3.cux;
+            cyC = (float)Math.Sin(0 / rad) * (100) + e3.cuy;
+            cx2C = (float)Math.Cos(0 / rad) * (1) + e3.cux2;
+            cy2C = (float)Math.Sin(0 / rad) * (90) + e3.cuy2;
+            pxC = cxC;
+            pyC = cyC;
+
+
+            cxD = (float)Math.Cos(0 / rad) * (100) + e4.cux;
+            cyD= (float)Math.Sin(0 / rad) * (100) + e4.cuy;
+            cx2D = (float)Math.Cos(0 / rad) * (1) + e4.cux2;
+            cy2D = (float)Math.Sin(0 / rad) * (90) + e4.cuy2;
+            pxD = cxD;
+            pyD = cyD;
+
+            for (int j = 0; j < 10; j += 1)
             {
                 for (int i = 0; i < 360; i += 5)
                 {
 
                     g.Clear(f.BackColor);
 
-                    px = cx;
-                    py = cy;
-                    cx = (float)Math.Cos(i / rad) * (100) + e.cux;
-                    cy = (float)Math.Sin(i / rad) * (100) + e.cuy;
-                    cx2 = (float)Math.Cos(i / rad) * (1) + e.cux2;
-                    cy2 = (float)Math.Sin(i / rad) * (90) + e.cuy2;
 
 
-                    g.DrawRectangle(f.pen2, cx, cy, 1, 1);
-                    g.DrawLine(f.pen2, e.cux, e.cuy, cx, cy);
-                    //g.DrawLine(f.pen2, e.cux2, e.cuy2, cx2, cy2);
-                    g.DrawLine(f.pen2, cx, cy, cx2, cy2);
-                    // g.DrawLine(f.pen2, e.cux2, e.cuy2, e.cux, e.cuy);
+
+                    //A
+
+                    pxA = cxA;
+                    pyA = cyA;
+                    cxA = (float)Math.Cos((i+0) / rad) * (100) + e1.cux;
+                    cyA = (float)Math.Sin((i + 0) / rad) * (100) + e1.cuy;
+                    cx2A = (float)Math.Cos((i + 0) / rad) * (1) + e1.cux2;
+                    cy2A = (float)Math.Sin((i + 0) / rad) * (90) + e1.cuy2;
+
+
+                    g.DrawRectangle(f.pen2, cxA, cyA, 1, 1);
+                    g.DrawLine(f.pen2, e1.cux, e1.cuy, cxA, cyA);
+                    //g.DrawLine(f.pen2, e1.cux2, e1.cuy2, cx2A, cy2A);
+                    g.DrawLine(f.pen2, cxA, cyA, cx2A, cy2A);
+                    // g.DrawLine(f.pen2, e1.cux2, e1.cuy2, e1.cux, e1.cuy);
+
+
+
+
+
+                    //B
+                    pxB = cxB;
+                    pyB = cyB;
+                    cxB = (float)Math.Cos((i + 45) / rad) * (100) + e2.cux;
+                    cyB = (float)Math.Sin((i + 45) / rad) * (100) + e2.cuy;
+                    cx2B = (float)Math.Cos((i + 45) / rad) * (1) + e2.cux2;
+                    cy2B = (float)Math.Sin((i + 45) / rad) * (90) + e2.cuy2;
+
+
+                    g.DrawRectangle(f.pen2, cxB, cyB, 1, 1);
+                    g.DrawLine(f.pen2, e2.cux, e2.cuy, cxB, cyB);
+                    //g.DrawLine(f.pen2, e2.cux2, e2.cuy2, cx2B, cy2B);
+                    g.DrawLine(f.pen2, cxB, cyB, cx2B, cy2B);
+                    // g.DrawLine(f.pen2, e2.cux2, e2.cuy2, e2.cux, e2.cuy);
+
+
+
+
+
+
+                    //C
+                    pxC = cxC;
+                    pyC = cyC;
+                    cxC = (float)Math.Cos((i + 45) / rad) * (100) + e3.cux;
+                    cyC = (float)Math.Sin((i + 45) / rad) * (100) + e3.cuy;
+                    cx2C = (float)Math.Cos((i + 45) / rad) * (1) + e3.cux2;
+                    cy2C = (float)Math.Sin((i + 45) / rad) * (90) + e3.cuy2;
+
+
+                    g.DrawRectangle(f.pen2, cxC, cyC, 1, 1);
+                    g.DrawLine(f.pen2, e3.cux, e3.cuy, cxC, cyC);
+                    //g.DrawLine(f.pen2, e3.cux2, e3.cuy2, cx2C, cy2C);
+                    g.DrawLine(f.pen2, cxC, cyC, cx2C, cy2C);
+                    // g.DrawLine(f.pen2, e3.cux2, e3.cuy2, e3.cux, e3.cuy);
+
+
+
+
+
+                    //D
+                    pxD = cxD;
+                    pyD = cyD;
+                    cxD = (float)Math.Cos((i + 0) / rad) * (100) + e4.cux;
+                    cyD = (float)Math.Sin((i + 0) / rad) * (100) + e4.cuy;
+                    cx2D = (float)Math.Cos((i + 0) / rad) * (1) + e4.cux2;
+                    cy2D = (float)Math.Sin((i + 0) / rad) * (90) + e4.cuy2;
+
+
+                    g.DrawRectangle(f.pen2, cxD, cyD, 1, 1);
+                    g.DrawLine(f.pen2, e4.cux, e4.cuy, cxD, cyD);
+                    //g.DrawLine(f.pen2, e4.cux2, e4.cuy2, cx2D, cy2D);
+                    g.DrawLine(f.pen2, cxD, cyD, cx2D, cy2D);
+                    // g.DrawLine(f.pen2, e4.cux2, e4.cuy2, e4.cux, e4.cuy);
+
+
 
 
                     Thread.Sleep(1);

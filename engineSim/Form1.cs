@@ -20,16 +20,10 @@ namespace engineSim
         {
             theengineMotor= new theengine(g, this);
             theengineMotor.e1 = new engine(350,650,350,240);
-            theengineMotor.drawCircle(ref theengineMotor.e1);
-
             theengineMotor.e2 = new engine(550, 650, 550, 240);
-            theengineMotor.drawCircle(ref theengineMotor.e2);
-
             theengineMotor.e3 = new engine(750, 650, 750, 240);
-            theengineMotor.drawCircle(ref theengineMotor.e3);
-
             theengineMotor.e4 = new engine(950, 650, 950, 240);
-            theengineMotor.drawCircle(ref theengineMotor.e4);
+            theengineMotor.drawCircle();
 
 
 
